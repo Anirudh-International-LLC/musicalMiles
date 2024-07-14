@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Authentication">
+    <title>Authentication</title>
+    <script src="auth.js" defer>
+        window.onload = function() {
+            const id = window.localStorage.getItem("musicalMilesID");
+            if (id !== null) {
+                window.location.href = 'miles.html'; // Replace with your desired URL
+            }
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+        }
+        #errorDisplay {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.5em;
+        }
+        h1 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="errorDisplay">Authentication in progress</h1>
+</body>
+</html>

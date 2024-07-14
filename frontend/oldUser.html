@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Authentication">
+    <title>User login</title>
+    <script>    
+    window.onload = function() {
+        let id = window.localStorage.getItem("musicalMilesID");
+        if (id === null) {
+            window.location.href = 'index.html'; // Replace with your desired URL
+        }
+
+        document.getElementById('redirectButton').addEventListener('click', function() {
+            window.location.href = 'miles.html'; // Replace with your desired URL
+        });
+
+        document.getElementById('deleteMe').addEventListener('click', function() {
+            fetch("/api/deleteAcc", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ AccountId: id })
+            }).then(() => {
+                window.localStorage.removeItem("musicalMilesID");
+                window.location.href = 'index.html'; // Replace with your desired URL
+            }).catch(error => console.error('Error:', error));
+        });
+    }
+    </script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+        }
+        p {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2em;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button#deleteMe {
+            background-color: #f44336;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button#deleteMe:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <p>Welcome back to Musical Miles</p>
+    <button id="redirectButton">Take me to my miles</button>
+    <button id="deleteMe">Delete My Account</button>
+</body>
+</html>

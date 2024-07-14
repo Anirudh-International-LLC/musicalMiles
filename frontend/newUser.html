@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Authentication">
+    <title>New User Created</title>
+    <script>
+    window.onload = function() {
+        let id = window.localStorage.getItem("musicalMilesID");
+        if (id === null) {
+            window.location.href = 'index.html'; // Replace with your desired URL
+        }
+
+        document.getElementById('redirectButton').addEventListener('click', function() {
+            window.location.href = 'miles.html'; // Replace with your desired URL
+        });
+    }
+    </script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+        }
+        p {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2em;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <p>Welcome to Musical Miles! A new account has been created for you. You can start listening to music and we will track your miles for you. A song is only considered as listened to when you listen to it for more than 1 minute.</p>
+    <button id="redirectButton">Take me to my miles</button>
+</body>
+</html>
