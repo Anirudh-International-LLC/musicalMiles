@@ -1,0 +1,6 @@
+Contributors - 
+
+Anirudh Kasyap Sesham - Concept, Chief of front-end development
+Karthikeya Telapalli - Co-chief of back-end development (Math), Junior Front-end developer
+Jathin Mahendra Sabbineni - Chief of back-end development 
+Muskaan Sheth - Database handling, Cloud implementation, IT
