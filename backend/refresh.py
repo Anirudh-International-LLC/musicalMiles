@@ -57,5 +57,7 @@ def refresh_tokens():
             cursor.close()
         if connection:
             connection.close()
+        time.sleep(1800)
+        refresh_tokens()
 
 refresh_tokens()
