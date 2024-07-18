@@ -85,5 +85,6 @@ def func():
         if connection.is_connected():
             cursor.close()
             connection.close()
+        time.sleep(60)
 func()
 
