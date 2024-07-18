@@ -86,5 +86,6 @@ def func():
             cursor.close()
             connection.close()
         time.sleep(60)
+        func()
 func()
 
