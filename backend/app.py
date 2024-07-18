@@ -2,10 +2,10 @@ from flask import Flask, request, jsonify
 import requests
 from flask_cors import CORS
 from urllib.parse import urlencode
-import mysql.connector
+import pymysql
 
 def connectSQL():
-    return mysql.connector.connect(
+    return pymysql.connect(
         host="localhost",
         user="root",
         password="root1234",
